@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chambre{% endblock %}
+
+{% block body %}
+    <h1>Chambre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chambre.id }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ chambre.numero }}</td>
+            </tr>
+            <tr>
+                <th>DateEntree</th>
+                <td>{{ chambre.dateEntree ? chambre.dateEntree|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Section</th>
+                <td>{{ chambre.section }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ chambre.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ chambre.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Handicap</th>
+                <td>{{ chambre.handicap }}</td>
+            </tr>
+            <tr>
+                <th>Capacite_lit</th>
+                <td>{{ chambre.capaciteLit }}</td>
+            </tr>
+            <tr>
+                <th>Batiment</th>
+                <td>{{ chambre.batiment }}</td>
+            </tr>
+            <tr>
+                <th>Etage</th>
+                <td>{{ chambre.etage }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_chambre_index') }}">back to list</a>
+
+    <a href="{{ path('app_chambre_edit', {'id': chambre.id}) }}">edit</a>
+
+    {{ include('chambre/_delete_form.html.twig') }}
+{% endblock %}
