@@ -1,0 +1,62 @@
+<header  class="row bg-primary text-white p-3 p-1">
+    <div class="d-flex justify-content-between container">
+        <div class="w-25">    
+            <img class="col-md-2 w-100" src="{{ asset('images/ugecam.jpg') }}" alt="Logo UGECAM"> 
+            <h1 id="maintitle">ESRP BEAUVOIR</h1>
+        </div>
+
+            
+        <div class="col-md-10 d-flex justify-content-end align-items-center w-50 d-flex flex-wrap row">
+            <div>
+                {% if app.user %}
+                <span class="ml-2 fs-2">Bonjour! {{app.user.nom}}, vous êtes connecté !</span>
+
+                {% else %}
+                <p class="ml-2 fs-2">Veuillez vous connecter</p>
+                {% endif %}
+            </div>
+
+            <div>
+                <nav class="navbar navbar-light w-75">
+                    
+                        <div class="dropdown bg-white p-1 rounded m-1">
+                            <a class="btn btn-primary" href="#" >
+                                Accueil
+                            </a>
+                        </div>
+                        
+                        <div class="dropdown bg-white p-1 rounded m-1">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Utilisateurs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Créer un utilisateur</a></li>
+                                <li><a class="dropdown-item" href="#">Liste des utilisateurs</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown bg-white p-1 rounded m-1">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Chambres
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Carte des chambres</a></li>
+                                <li><a class="dropdown-item" href="#">Liste des chambres</a></li>
+                            </ul>
+                        </div>
+                    
+
+                    {% if app.user %}
+                        <a href="{{ path('app_logout') }}" class="btn btn-light m-5">Déconnexion</a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}" class="btn btn-light m-5">Connexion</a>
+                    {% endif %}
+                </nav>
+            </div>
+        </div>
+    </div> 
+    
+</header>
+    <div class="col-md-4">
+    <button type="button" class="btn btn-secondary mb-2 font-weight-bold">Que faire ?</button>
+    </div>
