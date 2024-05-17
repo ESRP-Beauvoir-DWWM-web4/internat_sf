@@ -57,7 +57,7 @@ class UtilisateurController extends AbstractController
             'form' => $form,
         ]);
     }
-    #[IsGranted('ROLE_ADMIN', 'ROLE_GESTIONNAIRE', 'ROLE_UTILISATEUR')]
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_utilisateur_show', methods: ['GET'])]
     public function show(Utilisateur $utilisateur): Response
     {
