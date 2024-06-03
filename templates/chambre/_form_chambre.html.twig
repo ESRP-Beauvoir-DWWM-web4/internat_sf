@@ -1,0 +1,48 @@
+{# {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_row(form.numero) }}
+    {{ form_row(form.capacite_lit) }}
+    {{ form_row(form.batiment) }}
+    {{ form_row(form.etage) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+
+
+
+
+{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    <div class="text-center w-50 mx-auto">
+                <div class="d-flex justify-content-between mb-1">
+                {{ form_label(form.numero, null, {'label': 'Numéro:'}) }}
+                {{ form_widget(form.numero, {'attr': {'class': 'form-control w-75'}}) }}
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                {{ form_label(form.capacite_lit, null, {'label': 'Capacité du lit :'}) }}
+                {{ form_widget(form.capacite_lit, {'attr': {'class': 'form-control w-75'}}) }}
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                {{ form_label(form.batiment) }}
+                {{ form_widget(form.batiment, {'attr': {'class': 'form-control w-75'}}) }}          
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                {{ form_label(form.etage) }}
+                {{ form_widget(form.etage, {'attr': {'class': 'form-control w-75'}}) }}
+                </div>
+                {# <div class="d-flex justify-content-between mb-1">
+                {{ form_label(form.statut) }}
+                {{ form_widget(form.statut, {'attr': {'class': 'form-control w-75'}}) }}
+                </div> #}
+                {# <div class="d-flex justify-content-between mb-1">
+                {{ form_label(form.soutirageEau) }}
+                {{ form_widget(form.soutirageEau, {'attr': {'class': 'form-control w-75'}}) }}
+                </div> #}
+                <div class="d-flex justify-content-between mb-1">
+                {{ form_label(form.amenagement) }}
+                {{ form_widget(form.amenagement, {'attr': {'class': 'form-control w-75'}}) }}
+                </div>
+                <button class="btn btn-custom btn-primary">{{ button_label|default('Save') }}</button>
+            
+        
+        </div>
+{{ form_end(form) }} 

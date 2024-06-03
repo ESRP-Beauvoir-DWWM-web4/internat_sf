@@ -1,0 +1,4 @@
+    <form method="post" action="{{ path('app_chambre_change_status', {'id': chambre.id}) }}" onsubmit="return confirm('Voulez-vous changer le statut de la chambre ?');" onsubmit="confirm('Vous allez changer le status de la chambre')">
+        <button class="btn btn-custom btn-primary me-1"  data-toggle='tooltip' data-placement='top' title='Change le statut de la chambre n°{{chambre.numero}}'> <i class="fa-solid fa-person"></i> {{ chambre.statut ? "Vider" : "Occuper"}}
+        </button>
+    </form>

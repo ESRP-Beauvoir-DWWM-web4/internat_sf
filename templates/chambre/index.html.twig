@@ -1,8 +1,78 @@
-{% extends 'base.html.twig' %}
+    {% extends 'base.html.twig' %}
 
-{% block title %}Chambre index{% endblock %}
+    {% block title %}Liste chambres{% endblock %}
 
-{% block body %}
+    {% block body %}
+    
+    <div class="mt-4 p-2">
+        <h1 class="row h-100 justify-content-center fw-bold">Liste des chambres</h1>   
+        <table class="table table-bordered table-striped mt-3"  data-toggle='tooltip' data-placement='top' title="Couleur rouge = soutirage d'eau à faire, vert=fait">
+            <thead>
+                <tr>
+                    {# <th>Id</th> #}
+                    <th class="bg-primary text-white">Numero</th>
+                    <th class="bg-primary text-white">DateEntree</th>
+                    <th class="bg-primary text-white">Section</th>
+                    <th class="bg-primary text-white">Nom</th>
+                    <th class="bg-primary text-white">Prenom</th>
+                    <th class="bg-primary text-white">Handicap</th>
+                    <th class="bg-primary text-white">Capacite_lit</th>
+                    <th class="bg-primary text-white">Batiment</th>
+                    <th class="bg-primary text-white">Etage</th>
+                    <th class="bg-primary text-white">Statut</th>
+                    <th class="bg-primary text-white">Soutirage d'eau</th>
+                    <th class="bg-primary text-white">Aménagement</th>
+                    <th class="bg-primary text-white">actions</th>
+                </tr>
+            </thead>
+        <tbody>
+        {% for chambre in chambres %}
+            <tr 
+            {% if date(chambre.soutirageEau) < date('today')|date_modify('-15 days') or (chambre.soutirageEau == null and chambre.statut==false) %}
+                class='table-danger'
+            {% else %}
+                class='table-success'
+            {% endif %}
+            >
+                {# <td>{{ chambre.id }}</td> #}
+                <td>{{ chambre.numero }}</td>
+                <td>{{ chambre.dateEntree ? chambre.dateEntree|date('d-m-Y') : '' }}</td>
+                <td>{{ chambre.section }}</td>
+                <td>{{ chambre.nom }}</td>
+                <td>{{ chambre.prenom }}</td>
+                <td>{{ chambre.handicap }}</td>
+                <td>{{ chambre.capaciteLit }}</td>
+                <td>{{ chambre.batiment }}</td>
+                <td>{{ chambre.etage }}</td>
+                <td>{{ chambre.statut ? "Occupé" : "Vide" }}</td>
+                <td>{{ chambre.soutirageEau ? chambre.soutirageEau|date('d-m-Y') : '' }}
+                <td>{{ chambre.amenagement ? "PMR" : "" }}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <form action="{{ path('app_chambre_show', {'id': chambre.id}) }}" onsubmit="return confirm('Vous allez accéder aux informations de la chambre :')">
+                        <button class="btn btn-info me-1" data-toggle='tooltip' data-placement='top' title='Voir la chambre n°{{chambre.numero}}'><i class="fa-solid fa-eye"></i></button>
+                        </form>
+                        {{include("chambre/_change_status.html.twig")}}
+                        {{include("chambre/_change_soutirage_eau.html.twig")}}
+                        
+                        <form  action="{{ path('app_chambre_edit', {'id': chambre.id}) }}">
+                        <button class="btn btn-warning  me-1"><i class="fa-solid fa-bed"></i> Modifier chambre</button>
+                        </form>
+                        <form  action="{{ path('app_chambre_occupant_edit', {'id': chambre.id}) }}">
+                        <button class="btn btn-warning"><i class="fa-solid fa-person-half-dress"></i> Modifier occupant</button>
+                        </form>
+                        {# <a href="{{ path('app_chambre_occupant_edit', {'id': chambre.id}) }}" class="btn btn-warning btn-sm"><i class="fa-solid fa-person-half-dress p-1"></i>Modifier occupant</a> #}
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-
-{% endblock %}
+    <a href="{{ path('app_chambre_new') }}">Créer une chambre</a>
+    </div>
+    {% endblock %}
