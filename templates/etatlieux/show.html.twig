@@ -1,0 +1,354 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir l'état des lieux{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Voir l'état des lieux</h1>
+<div class="border border-dark m-2 row">
+    <div class="col-6">
+        <p class="m-3">Chambre : {{ etatlieux.chambre.id }}</p>       
+    </div>
+
+    
+
+        <div class="col-6">
+            <p class="w-25 m-4">Date de création  :  {{ etatlieux.dateCreation ? etatlieux.dateCreation|date('d-m-Y') : '' }}</p>        
+            <p class="fs-4 p-2">Occupant : </p>
+            <table class="table w-100">
+                
+                <tbody>
+            
+            <tr class="p-2">
+                <th class="w-25 m-3">Nom</th>
+                <td>{{ etatlieux.nom }}</td>
+            </tr>
+          
+            <tr class="p-2">
+                <th class="w-25 m-3">Prénom</th>
+                <td>{{ etatlieux.prenom }}</td>
+            </tr>
+            <tr class="p-2">
+                <th class="w-25 m-3">Section</th>
+                <td>{{ etatlieux.section }}</td>
+            </tr>
+            <tr class="p-2">
+                <th>Date d'entrée</th>
+                <td>{{ etatlieux.dateEntree ? etatlieux.dateEntree|date('d-m-Y') : '' }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <a href="{{ path('app_etatlieux_edit', {'id': etatlieux.id}) }}" class="btn bg-warning col-1 m-3">Faire l'état de sortie</a>
+    <div class="w-100 d-flex flex-wrap m-1">
+        <p>Neuf = N   - Bon état = BE  -  Etat d'usage = EU  -  Mauvais état = ME.</p>
+        <table class="w-100">
+            
+            <thead>
+                <tr>
+                    <th colspan="3" class="w-50 border border-dark"><p class="text-center fs-4">ENTREE</p></th>
+                    <th  colspan="3" class="w-50 border border-dark"><p class="text-center fs-4">SORTIE</p></th>
+                </tr>
+                <tr>
+                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Entrée</p></th>
+                    <th  colspan="3" class="w-100 fs-4"><p class="m-3">Entrée</p></th>
+                </tr>
+            </thead>
+         
+            <tbody>
+            
+            <tr class="w-100 container">
+                <td class="border border-dark col-md-1"><p>Porte</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.entreePorteEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.entreePorteEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Porte</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.entreePorteSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.entreePorteSortieCommentaire }}</td>
+            </tr>
+            <tr class="w-100 container">
+                <td class="border border-dark"><p>Sol</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.entreeSolEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.entreeSolEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Sol</p></td>
+                <td class=" border border-dark text-center">{{ etatlieux.entreeSolSortieEtat }}</td>
+                <td class=" border border-dark col-md-1">{{ etatlieux.entreeSolSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Mur</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.entreeMurEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.entreeMurEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Mur</p></td>
+                <td class=" border border-dark text-center">{{ etatlieux.entreeMurSortieEtat }}</td>
+                <td class=" border border-dark col-md-1">{{ etatlieux.entreeMurSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Plafond</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.entreePlafondEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.entreePlafondEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Plafond</p></td>
+                <td class=" border border-dark text-center">{{ etatlieux.entreePlafondSortieEtat }}</td>
+                <td class=" border border-dark col-md-1">{{ etatlieux.entreePlafondSortieCommentaire }}</td>
+            </tr>
+            </tbody>
+            <thead>
+         
+                <tr>
+                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Chambre</p></th>
+                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Chambre</p></th>
+               </tr>
+                
+            </thead>
+            <tr>
+                <td class="border border-dark col-md-1"><p>Sol</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreSolEntreeEtat }}</td>
+                <td class="border border-dark col-md-4">{{ etatlieux.chambreSolEntreeCommentaire }}</td>
+                <td class="border border-dark col-md-1"><p>Sol</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreSolSortieEtat }}</td>
+                <td class="border border-dark col-md-4">{{ etatlieux.chambreSolSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Mur</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreMurEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreMurEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Mur</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreMurSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreMurSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Plafond</p></td>
+                <td class="border border-dark text-center col-md-1">{{ etatlieux.chambrePlafondEntreeEtat }}</td>
+                <td class="border border-dark">{{ etatlieux.chambrePlafondEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Plafond</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambrePlafondSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambrePlafondSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Fenêtre</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreFenetresEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreFenetresEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Fenêtre</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreFenetresSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreFenetresSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Prise interupteur</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambrePriseinterupteurEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambrePriseinterupteurEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Fenêtre</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambrePriseinterupteurSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambrePriseinterupteurSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Armoire</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreArmoireEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreArmoireEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Armoire</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreArmoireSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreArmoireSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Bureau</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreBureauEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreBureauEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Bureau</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreBureauSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreBureauSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Table chevet</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreTablechevetEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreTablechevetEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Table chevet</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreTablechevetSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreTablechevetSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Chaise</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreChaiseEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreChaisesEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Chaise</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreChaisesSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreChaisesSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Lit ossature</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreLitossatureEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreLitossatureEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Lit ossature</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreLitossatureSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreLitossatureSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Matelas</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreMatelasEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreMatelasEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Matelas</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreMatelasSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreMatelasSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Oreiller</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreOreillerEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreOreillerEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Oreiller</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreOreillerSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreOreillerSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Prise téléphone</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambrePrisetelephoneEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambrePrisetelephoneEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Prise téléphone</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambrePrisetelephoneSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambrePrisetelephoneSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Prise informatique</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambrePriseinformatiquetvEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambrePriseinformatiquetvEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Prise informatique</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambrePriseinformatiquetvSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambrePriseinformatiquetvSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Luminaire</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreLuminaireEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreLuminaireEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Luminaire</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.chambreLuminaireSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.chambreLuminaireSortieCommentaire }}</td>
+            </tr>
+            </tbody>
+            <thead>
+                
+                <tr>
+                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Salle de bain</p></th>
+                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Salle de bain</p></th>
+                </tr>
+                
+            </thead>
+            <tr>
+                <td class="border border-dark"><p>Sol</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbSolEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbSolEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Sol</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbSolSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbSolSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Mur</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbMurEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbMurEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Mur</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbMurSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbMurSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Plafond</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbPlafondEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbPlafondEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Plafond</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbPlafondSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbPlafondSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Interrupteurs</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbPrisesinterrupteursEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbPrisesinterrupteureEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Interrupteurs</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbPrisesinterrupteursSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbPrisesinterrupteursSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Vasque lavabo</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbVasquelavaboEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbVasquelavaboEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Vasque lavabo</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbVasquelavaboSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbVasquelavaboSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Miroire</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbMiroirEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbMiroirEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Miroire</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbMiroirSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbMiroirSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Toilettes</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbToilettesEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbToilettesEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Toilettes</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbToilettesSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbToilettesSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Toilettes</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbAbattanttoilettesEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbAbattanttoilettesEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Toilettes</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbAbattanttoilettesSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbAbattanttoilettesSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Patere</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbPatereEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbPatereEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Patere</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbPatereSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbPatereSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Douche</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbDoucheEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbDoucheEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Douche</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbDoucheSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbDoucheSortieCommentaire }}</td>
+            </tr>
+            <tr>
+                <td class="border border-dark"><p>Pardouche</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbPardoucheEntreeEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbPardoucheEntreeCommentaire }}</td>
+                <td class="border border-dark"><p>Pardouche</p></td>
+                <td class="border border-dark text-center">{{ etatlieux.sdbPardoucheSortieEtat }}</td>
+                <td class="border border-dark col-md-1">{{ etatlieux.sdbPardoucheSortieCommentaire }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table w-50">
+        <tbody>
+
+            <tr>
+                <th class="p-3" colspan="1">Date de sortie : </th>
+                <td class="p-3" colspan="2">{{ etatlieux.dateSortie ? etatlieux.dateSortie|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="p-3" colspan="1">Heures de Menage : </th>
+                <td  class="p-3" colspan="2"><div><div class="w-25">{{ etatlieux.heuresMenage }}</div> </td></div>
+                <td><div class="p-0 w-25"><p class="m-1 fw-bold"> heure.</p></div></td>
+            </tr>
+            <tr>
+                <th class="p-3" colspan="1">Montant du Menage global : </th>
+                <td  class="p-3" colspan="2"><div><div class="w-25">{{ etatlieux.montantMenageGlobal }}</div> </td></div>
+                <td><div class="p-0 w-25"><p class="m-1 fw-bold"> euros.</p></div></td>
+        </tr>
+            <tr>
+                <th class="p-3" colspan="1">Adresse de sortie : </th>
+                <td class="p-3" colspan="2">{{ etatlieux.adresseSortie }}</td>
+            </tr>
+            <tr>
+                <th class="p-3" colspan="1">Observation : </th>
+                <td class="p-3" colspan="2">{{ etatlieux.observation }}</td>
+            </tr>
+        </tbody>
+            
+        </table>
+    </div>
+
+<a href="{{ path('app_etatlieux_index') }}" class="m-3">Retour à la liste </a>
+
+<a href="{{ path('app_etatlieux_edit', {'id': etatlieux.id}) }}" class="btn bg-warning col-1 m-4">Modifier</a>
+
+    {{ include('etatlieux/_delete_form.html.twig') }}
+{% endblock %}
