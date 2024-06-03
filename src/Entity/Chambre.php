@@ -48,6 +48,15 @@ class Chambre
     #[ORM\OneToMany(targetEntity: Etatlieux::class, mappedBy: 'chambre')]
     private Collection $etatslieux;
 
+    #[ORM\Column]
+    private ?bool $statut = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $soutirageEau = null;
+
+    #[ORM\Column]
+    private ?bool $amenagement = null;
+
     public function __construct()
     {
         $this->etatslieux = new ArrayCollection();
@@ -192,6 +201,42 @@ class Chambre
                 $etatslieux->setChambre(null);
             }
         }
+
+        return $this;
+    }
+
+    public function isStatut(): ?bool
+    {
+        return $this->statut;
+    }
+
+    public function setStatut(bool $statut): static
+    {
+        $this->statut = $statut;
+
+        return $this;
+    }
+
+    public function getSoutirageEau(): ?\DateTimeImmutable
+    {
+        return $this->soutirageEau;
+    }
+
+    public function setSoutirageEau(?\DateTimeImmutable $soutirageEau): static
+    {
+        $this->soutirageEau = $soutirageEau;
+
+        return $this;
+    }
+
+    public function isAmenagement(): ?bool
+    {
+        return $this->amenagement;
+    }
+
+    public function setAmenagement(bool $amenagement): static
+    {
+        $this->amenagement = $amenagement;
 
         return $this;
     }

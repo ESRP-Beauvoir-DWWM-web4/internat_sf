@@ -3,56 +3,123 @@
 {% block title %}Chambre{% endblock %}
 
 {% block body %}
-    <h1>Chambre</h1>
+{# <pre>
+    {{ dump(chambre.id) }}
+</pre> #}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ chambre.id }}</td>
-            </tr>
-            <tr>
-                <th>Numero</th>
-                <td>{{ chambre.numero }}</td>
-            </tr>
-            <tr>
-                <th>DateEntree</th>
-                <td>{{ chambre.dateEntree ? chambre.dateEntree|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Section</th>
-                <td>{{ chambre.section }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ chambre.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prenom</th>
-                <td>{{ chambre.prenom }}</td>
-            </tr>
-            <tr>
-                <th>Handicap</th>
-                <td>{{ chambre.handicap }}</td>
-            </tr>
-            <tr>
-                <th>Capacite_lit</th>
-                <td>{{ chambre.capaciteLit }}</td>
-            </tr>
-            <tr>
-                <th>Batiment</th>
-                <td>{{ chambre.batiment }}</td>
-            </tr>
-            <tr>
-                <th>Etage</th>
-                <td>{{ chambre.etage }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-bordered mt-4">
+                        <tbody>
+                            <h2 class="text-center">Descriptif chambre</h2>
+                            <tr>
+                                <th>Chambre :</th>
+                                <td>{{ chambre.numero }}</td>
+                            </tr>
+                            <tr>
+                                <th>Batiment</th>
+                                <td>{{ chambre.batiment }}</td>
+                            </tr>
+                            <tr>
+                                <th>Etage</th>
+                                <td>{{ chambre.etage }}</td>
+                            </tr>
+                            <tr>
+                                <th>Capacite_lit</th>
+                                <td>{{ chambre.capaciteLit }}</td>
+                            </tr>
+                            <tr>
+                                <th>État des lieux entrée :</th>
+                                <td>effectué</td>
+                            </tr>
+                            <tr>
+                                <th>État des lieux sortie :</th>
+                                <td>en attente</td>
+                            </tr>
+                            <tr>
+                                <th>Statut :</th>
+                                <td>{{ chambre.statut ? 'Occupé' : 'Vide' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-bordered mt-4">
+                        <tbody>
+                        <h2>Occupant :</h2>
+                            <tr>
+                                <th>DateEntree</th>
+                                <td>{{ chambre.dateEntree ? chambre.dateEntree|date('Y-m-d H:i:s') : '' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Nom</th>
+                                <td>{{ chambre.nom }}</td>
+                            </tr>
+                            <tr>
+                                <th>Prenom</th>
+                                <td>{{ chambre.prenom }}</td>
+                            </tr>
+                            <tr>
+                                <th>Section</th>
+                                <td>{{ chambre.section }}</td>
+                            </tr>
+                            <tr>
+                                <th>Handicap</th>
+                                <td>{{ chambre.handicap }}</td>
+                            </tr>
+                            <tr>
+                                <th>Présent :</th>
+                                <td>oui</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mt-3">
+                {{ include('chambre/_change_status.html.twig') }}
+                <a href="#" class="btn btn-primary">Voir état des lieux</a>
+                <a href="#" class="btn btn-primary">Faire état sortie</a>
+            </div>
+            <h2 class="mt-4">Historique :</h2>
+            <table class="table table-bordered mt-2">
+                <tbody>
+                    <tr>
+                        <td>Entrée : 01/05/2022</td>
+                        <td>Sortie : 25/02/2024</td>
+                        <td>DUPONT Michel</td>
+                        <td><a href="#" class="btn btn-primary">Voir</a></td>
+                    </tr>
+                    <tr>
+                        <td>Entrée : 01/02/2022</td>
+                        <td>Sortie : 16/04/2022</td>
+                        <td>LAMBERT Gérard</td>
+                        <td><a href="#" class="btn btn-primary">Voir</a></td>
+                    </tr>
+                    <tr>
+                        <td>Entrée : 17/07/2021</td>
+                        <td>Sortie : 20/01/2022</td>
+                        <td>DURAND Jacky</td>
+                        <td><a href="#" class="btn btn-primary">Voir</a></td>
+                    </tr>
+                    <tr>
+                        <td>Entrée : 01/03/2020</td>
+                        <td>Sortie : 29/06/2021</td>
+                        <td>LEGRAND Kévin</td>
+                        <td><a href="#" class="btn btn-primary">Voir</a></td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <a href="{{ path('app_chambre_index') }}">back to list</a>
+            <a href="{{ path('app_chambre_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('app_chambre_edit', {'id': chambre.id}) }}">edit</a>
+                    <a href="{{ path('app_chambre_edit', {'id': chambre.id}) }}" class="btn btn-warning btn-sm">Modifier la chambre</a>            
+                    <a href="{{ path('app_chambre_occupant_edit', {'id': chambre.id}) }}" class="btn btn-warning btn-sm">Modifier l'occupant</a>
+        </div>
+    </div>
+</div>
 
-    {{ include('chambre/_delete_form.html.twig') }}
+{{ include('chambre/_delete_form.html.twig') }}
 {% endblock %}
