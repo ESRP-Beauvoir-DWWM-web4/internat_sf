@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chambre - Etat entrée{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Chambre - Etat entrée</h1>
+
+    {{ include('etatlieux/_form.html.twig') }}
+
+    <a class="m-3" href="{{ path('app_etatlieux_index') }}">Retour à la liste</a>
+{% endblock %}

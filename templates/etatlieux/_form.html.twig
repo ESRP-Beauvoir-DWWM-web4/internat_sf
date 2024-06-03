@@ -1,0 +1,321 @@
+{{ form_start(form) }}
+    
+<div class="border border-dark m-2 row">
+    <div class="col-6">
+        <div class="m-3">
+            {{ form_row(form.chambre) }}
+        </div>
+    </div>
+
+
+
+       
+    <div class="col-6">
+        <div class="m-3">
+            {{ form_row(form.dateCreation) }}
+        </div>
+        
+        <p class="fs-4 fw-bold">Occupant : </p>
+
+        <table class="w-100">
+            <tbody>
+                <tr>
+                    <th class="w-25">Nom</th>
+                    <td><div>{{ form_row(form.nom, {'attr' : { 'class' : 'w-75' } }) }}</div></td>
+                </tr>
+                <tr>
+                    <th>Prénom</th>
+                    <td>{{ form_row(form.prenom, {'attr' : { 'class' : 'w-75' } }) }}</td>
+                </tr>
+                <tr>
+                    <th>Section</th>
+                    <td>{{ form_row(form.section, {'attr' : { 'class' : 'w-75' } }) }}</td>
+                </tr>
+                <tr>
+                    <th>Date d'entrée</th>
+                    <td>{{ form_row(form.dateEntree, {'attr' : { 'class' : 'w-75' } }) }}</td>
+                   
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+  
+<div class="w-100 d-flex flex-wrap m-1">
+<table class="w-100">
+    <thead>
+        <tr>
+            <th colspan="3" class="w-50 border border-dark"><p class="text-center fs-4">ENTREE</p></th>
+            <th  colspan="3" class="w-50 border border-dark"><p class="text-center fs-4">SORTIE (EN ATTENTE)</p></th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr>
+            <th colspan="3" class="w-100 fs-4"><p class="m-3">Entrée</p></th>
+            <th  colspan="3" class="w-100 fs-4 bg-secondary"><p class="m-3">Entrée</p></th>
+       </tr>
+        <tr class="w-100 container">
+            <td class="border border-dark col-md-1"><p>Porte</p></td>
+            <td class="border border-dark col-md-1">{{ form_row(form.entreePorteEntreeEtat) }}</div></td>
+            <td class="border border-dark text-center">{{ form_row(form.entreePorteEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark col-md-1 bg-secondary"><p>Porte</p></td>
+            <td class="border border-dark col-md-1 bg-secondary"></div></td>
+            <td class="border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr class="w-100 container">
+            <td class="border border-dark"><p>Sol</p></td>
+            <td class="border border-dark col-md-1">{{ form_row(form.entreeSolEntreeEtat) }}</td>
+            <td class="border border-dark text-center">{{ form_row(form.entreeSolEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Sol</p></td>
+            <td class=" border border-dark col-md-1 bg-secondary"></td> 
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Mur</p></td>
+            <td class=" border border-dark">{{ form_row(form.entreeMurEntreeEtat) }}</td> 
+            <td class=" border border-dark text-center">{{ form_row(form.entreeMurEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Mur</p></td>
+            <td class=" border border-dark bg-secondary"></td> 
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Plafond</p></td>
+            <td class=" border border-dark">{{ form_row(form.entreePlafondEntreeEtat) }}</td> 
+            <td class=" border border-dark text-center">{{ form_row(form.entreePlafondEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Plafond</p></td>
+            <td class=" border border-dark bg-secondary"></td> 
+            <td class=" border border-dark text-center bg-secondary"></td> 
+             
+        </tr>
+        
+         
+        <tr>
+            <th colspan="3" class="w-100 fs-4"><p class="m-3">Chambre</p></th>
+            <th colspan="3" class="w-100 fs-4 bg-secondary"><p class="m-3">Chambre</p></th>
+        </tr>
+        
+       
+        <tr>
+            <td class="border border-dark"><p>Sol</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreSolEntreeEtat) }}</td> 
+            <td class=" border border-dark text-center">{{ form_row(form.chambreSolEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Sol</p></td>
+            <td class=" border border-dark bg-secondary"></td> 
+            <td class=" border border-dark text-center bg-secondary"></td> 
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Mur</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreMurEntreeEtat) }}</td> 
+            <td class=" border border-dark text-center">{{ form_row(form.chambreMurEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Mur</p></td>
+            <td class=" border border-dark bg-secondary"></td> 
+            <td class=" border border-dark text-center bg-secondary"></td>  
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Plafond</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambrePlafondEntreeEtat) }} 
+            <td class=" border border-dark text-center">{{ form_row(form.chambrePlafondEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Plafond</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Fenêtre</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreFenetresEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.chambreFenetresEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td> 
+            <td class="border border-dark bg-secondary"><p>Fenêtre</p></td>
+            <td class=" border border-dark bg-secondary"></td> 
+            <td class=" border border-dark text-center bg-secondary"></td> 
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Prise interupteur</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambrePriseinterupteurEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.chambrePriseinterupteurEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Prise interupteur</p></td>
+            <td class=" border border-dark bg-secondary"></td> 
+            <td class=" border border-dark text-center bg-secondary"></td>  
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Armoire</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreArmoireEntreeEtat) }}</td>   
+            <td class=" border border-dark text-center">{{ form_row(form.chambreArmoireEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td> 
+            <td class="border border-dark bg-secondary"><p>Armoire</p></td>
+            <td class=" border border-dark bg-secondary"></td> 
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Bureau</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreBureauEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.chambreBureauEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Bureau</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Table chevet</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreTablechevetEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.chambreTablechevetEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Table chevet</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Chaise</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreChaiseEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.chambreChaisesEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Chaise</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Lit ossature</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreLitossatureEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.chambreLitossatureEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Lit ossature</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Matelas</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreMatelasEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.chambreMatelasEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Matelas</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Oreiller</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreOreillerEntreeEtat) }}
+            <td class=" border border-dark text-center">{{ form_row(form.chambreOreillerEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Oreiller</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Prise téléphone</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambrePrisetelephoneEntreeEtat) }}
+            <td class=" border border-dark text-center">{{ form_row(form.chambrePrisetelephoneEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Prise téléphone</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Prise informatique</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambrePriseinformatiquetvEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.chambrePriseinformatiquetvEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Prise informatique</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Luminaire</p></td>
+            <td class=" border border-dark">{{ form_row(form.chambreLuminaireEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.chambreLuminaireEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Luminaire</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        
+         
+        <tr>
+            <th colspan="3" class="w-100 fs-4"><p class="m-3">Salle de bain</p></th>
+            <th colspan="3" class="w-100 fs-4 bg-secondary"><p class="m-3">Salle de bain</p></th>
+        </tr>
+            
+       
+        <tr>
+            <td class="border border-dark"><p>Sol</p></td>
+            <td class="border border-dark">{{ form_row(form.sdbSolEntreeEtat) }}</td>
+            <td class="border border-dark text-center">{{ form_row(form.sdbSolEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Sol</p></td>
+            <td class="border border-dark bg-secondary"></td>
+            <td class="border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Mur</p></td>
+            <td class="border border-dark">{{ form_row(form.sdbMurEntreeEtat) }}</td>
+            <td class="border border-dark text-center">{{ form_row(form.sdbMurEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Mur</p></td>
+            <td class="border border-dark bg-secondary"></td>
+            <td class="border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Plafond</p></td>
+            <td class=" border border-dark">{{ form_row(form.sdbPlafondEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.sdbPlafondEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Plafond</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Interrupteurs</p></td>
+            <td class=" border border-dark">{{ form_row(form.sdbPrisesinterrupteursEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.sdbPrisesinterrupteureEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Interrupteurs</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Vasque lavabo</p></td>
+            <td class=" border border-dark">{{ form_row(form.sdbVasquelavaboEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.sdbVasquelavaboEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Vasque lavabo</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Miroire</p></td>
+            <td class=" border border-dark">{{ form_row(form.sdbMiroirEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.sdbMiroirEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Miroire</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Toilettes</p></td>
+            <td class=" border border-dark">{{ form_row(form.sdbToilettesEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.sdbToilettesEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Toilettes</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Abattant toilettes</p></td>
+            <td class=" border border-dark">{{ form_row(form.sdbAbattanttoilettesEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.sdbAbattanttoilettesEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Abattant toilettes</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Patere</p></td>
+            <td class=" border border-dark">{{ form_row(form.sdbPatereEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.sdbPatereEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Patere</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Douche</p></td>
+            <td class=" border border-dark">{{ form_row(form.sdbDoucheEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.sdbDoucheEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Douche</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+        <tr>
+            <td class="border border-dark"><p>Pardouche</p></td>
+            <td class=" border border-dark">{{ form_row(form.sdbPardoucheEntreeEtat) }}</td>
+            <td class=" border border-dark text-center">{{ form_row(form.sdbPardoucheEntreeCommentaire, {'attr' : { 'class' : 'col-11' } }) }}</td>
+            <td class="border border-dark bg-secondary"><p>Pardouche</p></td>
+            <td class=" border border-dark bg-secondary"></td>
+            <td class=" border border-dark text-center bg-secondary"></td>
+        </tr>
+    </tbody>
+</table>
+
+
+    <button class="btn bg-success m-2">{{ button_label|default('Enregistrer') }}</button>
+
+{{ form_end(form) }}

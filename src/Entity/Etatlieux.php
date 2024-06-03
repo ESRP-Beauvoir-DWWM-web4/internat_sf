@@ -27,9 +27,6 @@ class Etatlieux
     private ?string $section = null;
 
     #[ORM\Column]
-    private ?int $numeroChambre = null;
-
-    #[ORM\Column]
     private ?\DateTimeImmutable $dateEntree = null;
 
     #[ORM\Column(nullable: true)]
@@ -411,6 +408,9 @@ class Etatlieux
     #[ORM\JoinColumn(nullable: false)]
     private ?Chambre $chambre = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $statut = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -460,18 +460,6 @@ class Etatlieux
     public function setSection(string $section): static
     {
         $this->section = $section;
-
-        return $this;
-    }
-
-    public function getNumeroChambre(): ?int
-    {
-        return $this->numeroChambre;
-    }
-
-    public function setNumeroChambre(int $numeroChambre): static
-    {
-        $this->numeroChambre = $numeroChambre;
 
         return $this;
     }
@@ -1996,6 +1984,18 @@ class Etatlieux
     public function setChambre(?Chambre $chambre): static
     {
         $this->chambre = $chambre;
+
+        return $this;
+    }
+
+    public function isStatut(): ?bool
+    {
+        return $this->statut;
+    }
+
+    public function setStatut(?bool $statut): static
+    {
+        $this->statut = $statut;
 
         return $this;
     }
