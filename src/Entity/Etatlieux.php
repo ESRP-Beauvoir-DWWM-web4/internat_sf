@@ -411,6 +411,9 @@ class Etatlieux
     #[ORM\Column(nullable: true)]
     private ?bool $statut = null;
 
+    #[ORM\Column]
+    private ?bool $caution = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -1996,6 +1999,18 @@ class Etatlieux
     public function setStatut(?bool $statut): static
     {
         $this->statut = $statut;
+
+        return $this;
+    }
+
+    public function isCaution(): ?bool
+    {
+        return $this->caution;
+    }
+
+    public function setCaution(bool $caution): static
+    {
+        $this->caution = $caution;
 
         return $this;
     }
