@@ -10,11 +10,16 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 #[Route('/etatlieux')]
 class EtatlieuxController extends AbstractController
 {
+ 
+   
+    #[IsGranted('ROLE_GESTIONNAIRE')]
     #[Route('/', name: 'app_etatlieux_index', methods: ['GET'])]
     public function index(EtatlieuxRepository $etatlieuxRepository): Response
     {
@@ -22,7 +27,8 @@ class EtatlieuxController extends AbstractController
             'etatlieuxes' => $etatlieuxRepository->findBy(array(), array('nom' => 'asc')),
         ]);
     }
-
+    
+    #[IsGranted('ROLE_GESTIONNAIRE')]
     #[Route('/new', name: 'app_etatlieux_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -30,6 +36,7 @@ class EtatlieuxController extends AbstractController
 
         $etatlieux->setDateCreation(new \DateTimeImmutable('now'));
         $etatlieux->setDateEntree(new \DateTimeImmutable('now'));
+        $etatlieux->setCaution(false);
     
  
 
@@ -51,7 +58,7 @@ class EtatlieuxController extends AbstractController
             'form' => $form,
         ]);
     }
-
+    #[IsGranted('ROLE_GESTIONNAIRE')]
     #[Route('/{id}', name: 'app_etatlieux_show', methods: ['GET'])]
     public function show(Etatlieux $etatlieux): Response
     {
@@ -60,6 +67,7 @@ class EtatlieuxController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_GESTIONNAIRE')]
     #[Route('/{id}/sortie/edit', name: 'app_etatlieux_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Etatlieux $etatlieux, EntityManagerInterface $entityManager): Response
     {
