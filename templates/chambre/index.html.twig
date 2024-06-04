@@ -48,6 +48,7 @@
                 <td>{{ chambre.soutirageEau ? chambre.soutirageEau|date('d-m-Y') : '' }}
                 <td>{{ chambre.amenagement ? "PMR" : "" }}</td>
                 <td>
+                    {% if is_granted('ROLE_GESTIONNAIRE') %}
                     <div class="btn-group" role="group">
                         <form action="{{ path('app_chambre_show', {'id': chambre.id}) }}" onsubmit="return confirm('Vous allez accéder aux informations de la chambre :')">
                         <button class="btn btn-info me-1" data-toggle='tooltip' data-placement='top' title='Voir la chambre n°{{chambre.numero}}'><i class="fa-solid fa-eye"></i></button>
@@ -61,8 +62,8 @@
                         <form  action="{{ path('app_chambre_occupant_edit', {'id': chambre.id}) }}">
                         <button class="btn btn-warning"><i class="fa-solid fa-person-half-dress"></i> Modifier occupant</button>
                         </form>
-                        {# <a href="{{ path('app_chambre_occupant_edit', {'id': chambre.id}) }}" class="btn btn-warning btn-sm"><i class="fa-solid fa-person-half-dress p-1"></i>Modifier occupant</a> #}
                     </div>
+        {% endif %} 
                 </td>
             </tr>
         {% else %}
@@ -75,4 +76,5 @@
 
     <a href="{{ path('app_chambre_new') }}">Créer une chambre</a>
     </div>
+
     {% endblock %}
