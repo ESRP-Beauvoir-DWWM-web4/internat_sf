@@ -26,6 +26,15 @@ class ChambreController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_UTILISATEUR')]
+    #[Route('/planchambre', name: 'app_chambre_planchambre', methods: ['GET'])]
+    public function indexplanchambre(ChambreRepository $chambreRepository): Response
+    {
+        return $this->render('chambre/planchambre.html.twig', [
+            'chambres' => $chambreRepository->findBy([]),
+        ]);
+    }
+
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/new', name: 'app_chambre_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
