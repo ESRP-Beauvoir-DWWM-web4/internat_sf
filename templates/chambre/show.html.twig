@@ -31,14 +31,7 @@
                                 <th>Capacite_lit</th>
                                 <td>{{ chambre.capaciteLit }}</td>
                             </tr>
-                            <tr>
-                                <th>État des lieux entrée :</th>
-                                <td>effectué</td>
-                            </tr>
-                            <tr>
-                                <th>État des lieux sortie :</th>
-                                <td>en attente</td>
-                            </tr>
+                            
                             <tr>
                                 <th>Statut :</th>
                                 <td>{{ chambre.statut ? 'Occupé' : 'Vide' }}</td>
@@ -71,8 +64,8 @@
                                 <td>{{ chambre.handicap }}</td>
                             </tr>
                             <tr>
-                                <th>Présent :</th>
-                                <td>oui</td>
+                                {# <th>Présent :</th>
+                                <td>oui</td> #}
                             </tr>
                         </tbody>
                     </table>
@@ -81,7 +74,23 @@
             <div class="mt-3">
                 {{ include('chambre/_change_status.html.twig') }}
                 <a href="#" class="btn btn-primary">Voir état des lieux</a>
-                <a href="#" class="btn btn-primary">Faire état sortie</a>
+                
+                {% set test = false %}
+                {% set id = null %}
+                {% for edl in chambre.etatslieux %}
+                    {% if (edl.isStatut == 0) %}
+                        {% set test = true %}
+                        {% set id = edl.id %}
+                    {% endif %}
+                {% endfor %}
+                {% if (chambre.nom != null) and (chambre.prenom != null) and (chambre.section != null) and (chambre.dateEntree != null) %}
+                    {% if test == false or chambre.etatslieux|length == 0 %}
+                    <a href="{{ path('app_etatlieux_new', {'id': chambre.id}) }}" class="btn btn-warning">créer état lieux</a>
+                    {% else %}
+                    <a href="{{ path('app_etatlieux_edit', {'id': id}) }}" class="btn btn-primary">Faire état sortie</a>
+                    {% endif %}
+                {% endif %}
+                
             </div>
             <h2 class="mt-4">Historique :</h2>
             <table class="table table-bordered mt-2">
