@@ -3,7 +3,8 @@
 <div class="border border-dark m-2 row">
     <div class="col-6">
         <div class="m-3">
-            {{ form_row(form.chambre) }}
+            {# {{ form_row(form.chambre) }} #}
+            <p>Chambre N° : {{ chambre.numero }}</p>
         </div>
     </div>
 
@@ -12,7 +13,8 @@
        
     <div class="col-6">
         <div class="m-3">
-            {{ form_row(form.dateCreation) }}
+            <p>Date de création :  {{ etatlieux.dateCreation|date('d-m-Y') }}</p>
+           
         </div>
         
         <p class="fs-4 fw-bold">Occupant : </p>
@@ -21,19 +23,19 @@
             <tbody>
                 <tr>
                     <th class="w-25">Nom</th>
-                    <td><div>{{ form_row(form.nom, {'attr' : { 'class' : 'w-75' } }) }}</div></td>
+                    <td><div>{{ etatlieux.nom }}</div></td>
                 </tr>
                 <tr>
                     <th>Prénom</th>
-                    <td>{{ form_row(form.prenom, {'attr' : { 'class' : 'w-75' } }) }}</td>
+                    <td>{{ etatlieux.prenom }}</td>
                 </tr>
                 <tr>
                     <th>Section</th>
-                    <td>{{ form_row(form.section, {'attr' : { 'class' : 'w-75' } }) }}</td>
+                    <td>{{ etatlieux.section }}</td>
                 </tr>
                 <tr>
                     <th>Date d'entrée</th>
-                    <td>{{ form_row(form.dateEntree, {'attr' : { 'class' : 'w-75' } }) }}</td>
+                    <td>{{ etatlieux.dateEntree|date('d-m-Y') }}</td>
                    
                 </tr>
             </tbody>

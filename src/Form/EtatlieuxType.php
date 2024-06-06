@@ -19,51 +19,52 @@ class EtatlieuxType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('dateCreation', DateType::class, [
-                'widget' => 'single_text',
-                'label' => 'Date de création :',
-                'format' => 'yyyy-MM-dd'
-            ])
-            ->add('nom', TextType::class, [
-                'label' => " ",
-            ])
+            // ->add('dateCreation', DateType::class, [
+            //     'widget' => 'single_text',
+            //     'label' => 'Date de création :',
+            //     'format' => 'yyyy-MM-dd'
+            // ])
+            // ->add('nom', TextType::class, [
+            //     'label' => " ",
+            // ])
+           
 
-            ->add('nom', TextareaType::class,  [
+            // ->add('nom', TextareaType::class,  [
                         
-                'constraints' => [
+            //     'constraints' => [
                 
-                    new Length([
-                        'maxMessage' => 'Vous pouvez indiquer jusqu\à 50 caractères',
-                        'max' => 50,
-                    ])],
-                    'label' => " "    
-                    ])           
+            //         new Length([
+            //             'maxMessage' => 'Vous pouvez indiquer jusqu\à 50 caractères',
+            //             'max' => 50,
+            //         ])],
+            //         'label' => " "    
+            //         ])           
  
-            ->add('prenom', TextareaType::class,  [
+            // ->add('prenom', TextareaType::class,  [
                         
-                'constraints' => [
+            //     'constraints' => [
                 
-                    new Length([
-                        'maxMessage' => 'Vous pouvez indiquer jusqu\à 50 caractères',
-                        'max' => 50,
-                    ])],
-                    'label' => " "    
-                    ])
-            ->add('section', TextareaType::class,  [
+            //         new Length([
+            //             'maxMessage' => 'Vous pouvez indiquer jusqu\à 50 caractères',
+            //             'max' => 50,
+            //         ])],
+            //         'label' => " "    
+            //         ])
+            // ->add('section', TextareaType::class,  [
                         
-                'constraints' => [
+            //     'constraints' => [
                 
-                    new Length([
-                        'maxMessage' => 'Vous pouvez indiquer jusqu\à 50 caractères',
-                        'max' => 50,
-                    ])],
-                    'label' => " "    
-                    ])
-            ->add('dateEntree', DateType::class, [
-                'widget' => 'single_text',
-                'label' => " ",
-                'format' => 'yyyy-MM-dd'
-            ])
+            //         new Length([
+            //             'maxMessage' => 'Vous pouvez indiquer jusqu\à 50 caractères',
+            //             'max' => 50,
+            //         ])],
+            //         'label' => " "    
+            //         ])
+            // ->add('dateEntree', DateType::class, [
+            //     'widget' => 'single_text',
+            //     'label' => " ",
+            //     'format' => 'yyyy-MM-dd'
+            // ])
             ->add('entreePorteEntreeEtat', ChoiceType::class, 
             [
                 'choices'  => [
@@ -72,7 +73,7 @@ class EtatlieuxType extends AbstractType
                     'Etat d\'usage' => "EU",
                     'Mauvais état' => "ME"
                 ],
-                'label' => " ",
+                'label' => " ",   
             ])
 
             
@@ -686,10 +687,10 @@ class EtatlieuxType extends AbstractType
                     ])
      
 
-            ->add('chambre', EntityType::class, [
-                'class' => Chambre::class,
-                'choice_label' => 'id',
-            ])
+            // ->add('chambre', EntityType::class, [
+            //     'class' => Chambre::class,
+            //     'choice_label' => 'id',
+            // ])
         ;
     }
 

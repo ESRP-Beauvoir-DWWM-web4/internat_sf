@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
-
 {% block title %}Voir l'état des lieux{% endblock %}
+
+
 
 {% block body %}
 <h1 class="text-center">Voir l'état des lieux</h1>
@@ -346,14 +346,10 @@
         </table>
     </div>
 
-<a href="{{ path('app_etatlieux_index') }}" class="m-3">Retour à la liste </a>
 
-<a href="{{ path('app_etatlieux_edit', {'id': etatlieux.id}) }}" class="btn bg-warning col-1 m-4">Modifier</a>
+<div class="text-center">
+    <button onclick="window.print()" class="btn btn-primary">Imprimer</button>
+    </div>
 
-
-<a href="{{ path('app_etatlieux_showimprimer', {'id': etatlieux.id}) }}" class="btn bg-gray col-1 m-4">Afficher l'impression</a>
-
-
-
-    {{ include('etatlieux/_delete_form.html.twig') }}
+   
 {% endblock %}

@@ -18,6 +18,8 @@ class EtatlieuxSortieType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        // $readonly = $options['readonly'];
+
         $builder
             ->add('dateSortie', DateType::class, [
                 'widget' => 'single_text',
