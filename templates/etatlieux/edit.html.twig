@@ -8,6 +8,7 @@
     {{ include('etatlieux/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
     <a href="{{ path('app_etatlieux_index') }}" class="p-3">Retour à la liste</a>
+ 
 
     {% if is_granted('ROLE_ADMIN') %}
     {{ include('etatlieux/_delete_form.html.twig') }}
