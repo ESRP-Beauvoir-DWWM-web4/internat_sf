@@ -38,7 +38,7 @@
         </tbody>
         </table>
     </div>
-    <a href="{{ path('app_etatlieux_edit', {'id': etatlieux.id}) }}" class="btn bg-warning col-1 m-3">Faire l'état de sortie</a>
+
     <div class="w-100 d-flex flex-wrap m-1">
         <p>Neuf = N   - Bon état = BE  -  Etat d'usage = EU  -  Mauvais état = ME.</p>
         <table class="w-100">
@@ -348,10 +348,10 @@
 
 <a href="{{ path('app_etatlieux_index') }}" class="m-3">Retour à la liste </a>
 
-<a href="{{ path('app_etatlieux_edit', {'id': etatlieux.id}) }}" class="btn bg-warning col-1 m-4">Modifier</a>
+<a href="{{ path('app_etatlieux_edit', {'id': etatlieux.id}) }}" class="btn bg-warning col-1">Modifier</a>
 
 
-<a href="{{ path('app_etatlieux_showimprimer', {'id': etatlieux.id}) }}" class="btn bg-gray col-1 m-4">Afficher l'impression</a>
+<a href="{{ path('app_etatlieux_showimprimer', {'id': etatlieux.id}) }}" class="btn bg-gray col-2 m-1">Afficher l'impression</a>
 
 
 

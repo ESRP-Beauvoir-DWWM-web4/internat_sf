@@ -68,10 +68,10 @@ class EtatlieuxType extends AbstractType
             ->add('entreePorteEntreeEtat', ChoiceType::class, 
             [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",   
             ])
@@ -90,10 +90,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('entreeSolEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -110,10 +110,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('entreeMurEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " "
             ])
@@ -130,10 +130,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('entreePlafondEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " "
             ])
@@ -150,10 +150,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('chambreSolEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " "
             ])
@@ -170,10 +170,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('chambreMurEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " "
             ])
@@ -190,10 +190,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('chambrePlafondEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -210,10 +210,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('chambreFenetresEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -231,10 +231,10 @@ class EtatlieuxType extends AbstractType
 
             ->add('chambrePriseinterupteurEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -251,10 +251,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('chambreArmoireEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],'label' => " ",
             ])
             ->add('chambreArmoireEntreeCommentaire', TextareaType::class,  [
@@ -270,10 +270,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('chambreBureauEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -290,10 +290,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('chambreTablechevetEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -310,10 +310,10 @@ class EtatlieuxType extends AbstractType
                     ])
             ->add('chambreChaiseEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -331,10 +331,10 @@ class EtatlieuxType extends AbstractType
 
             ->add('chambreLitossatureEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -352,10 +352,10 @@ class EtatlieuxType extends AbstractType
       
             ->add('chambreMatelasEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -373,10 +373,10 @@ class EtatlieuxType extends AbstractType
         
             ->add('chambreOreillerEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -394,10 +394,10 @@ class EtatlieuxType extends AbstractType
     
             ->add('chambrePrisetelephoneEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -415,10 +415,10 @@ class EtatlieuxType extends AbstractType
            
             ->add('chambrePriseinformatiquetvEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -436,10 +436,10 @@ class EtatlieuxType extends AbstractType
        
             ->add('chambreLuminaireEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -457,10 +457,10 @@ class EtatlieuxType extends AbstractType
         
             ->add('sdbSolEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -478,10 +478,10 @@ class EtatlieuxType extends AbstractType
           
             ->add('sdbMurEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -499,10 +499,10 @@ class EtatlieuxType extends AbstractType
         
             ->add('sdbPlafondEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -520,10 +520,10 @@ class EtatlieuxType extends AbstractType
          
             ->add('sdbPrisesinterrupteursEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -541,10 +541,10 @@ class EtatlieuxType extends AbstractType
      
             ->add('sdbVasquelavaboEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -562,10 +562,10 @@ class EtatlieuxType extends AbstractType
           
             ->add('sdbMiroirEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -583,10 +583,10 @@ class EtatlieuxType extends AbstractType
         
             ->add('sdbToilettesEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -604,10 +604,10 @@ class EtatlieuxType extends AbstractType
           
             ->add('sdbAbattanttoilettesEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -625,10 +625,10 @@ class EtatlieuxType extends AbstractType
       
             ->add('sdbPatereEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -646,10 +646,10 @@ class EtatlieuxType extends AbstractType
      
             ->add('sdbDoucheEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -667,10 +667,10 @@ class EtatlieuxType extends AbstractType
     
             ->add('sdbPardoucheEntreeEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -701,3 +701,4 @@ class EtatlieuxType extends AbstractType
         ]);
     }
 }
+

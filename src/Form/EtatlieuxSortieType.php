@@ -71,11 +71,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('entreePorteSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
 
                 ],
                 'label' => " ",
@@ -94,11 +94,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('entreeSolSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " "
             ])
@@ -115,11 +115,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('entreeMurSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " "
             ])
@@ -136,11 +136,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('entreePlafondSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " "
             ])
@@ -157,11 +157,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreSolSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " "
             ])
@@ -178,11 +178,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreMurSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                   "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " "
             ])
@@ -199,11 +199,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambrePlafondSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne état' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -220,11 +220,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreFenetresSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -241,11 +241,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambrePriseinterupteurSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],'label' => " ",
             ])
             ->add('chambrePriseinterupteurSortieCommentaire', TextareaType::class,  [
@@ -261,11 +261,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreArmoireSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -282,11 +282,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreBureauSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -303,11 +303,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreTablechevetSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -324,11 +324,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreChaisesSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -345,11 +345,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreLitossatureSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -366,11 +366,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreMatelasSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -387,11 +387,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreOreillerSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -408,11 +408,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambrePrisetelephoneSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -429,11 +429,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambrePriseinformatiquetvSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -450,11 +450,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('chambreLuminaireSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -471,11 +471,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbSolSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -492,11 +492,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbMurSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -513,11 +513,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbPlafondSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -534,11 +534,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbPrisesinterrupteursSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -555,11 +555,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbVasquelavaboSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -576,11 +576,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbMiroirSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -597,11 +597,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbToilettesSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -618,11 +618,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbAbattanttoilettesSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -639,11 +639,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbPatereSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -660,11 +660,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbDoucheSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
@@ -681,11 +681,11 @@ class EtatlieuxSortieType extends AbstractType
                     ])
             ->add('sdbPardoucheSortieEtat', ChoiceType::class, [
                 'choices'  => [
-                    'Choisir état' => "choisir état",
-                    'Bonne etat' => "BE",
-                    'Neuf' => "N",
-                    'Etat d\'usage' => "EU",
-                    'Mauvais état' => "ME"
+                    // 'Choisir état' => "choisir état",
+                    "Neuf" => "Neuf",
+                    "Bon état" => "Bon état",
+                    "État d'usage" => "État d'usage",
+                    "Mauvais état" => "Mauvais état"
                 ],
                 'label' => " ",
             ])
