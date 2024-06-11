@@ -8,3 +8,17 @@
     margin-bottom: 0.2rem;
 }
 
+.room {
+    border: 1px solid #000;
+    height: 80px;
+}
+.pmr {
+    background-color: red;
+    color: white;
+}
+.absent {
+    background-color: yellow;
+}
+.todo {
+    background-color: pink;
+}
