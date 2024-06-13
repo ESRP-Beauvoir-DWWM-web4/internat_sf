@@ -64,7 +64,7 @@ class EtatlieuxSortieType extends AbstractType
                 
                     new Length([
                         'maxMessage' => 'Vous pouvez indiquer jusqu\à 50 caractères',
-                        'max' => 50,
+                        'max' => 300,
                     ])],
                     'label' => " ",
                     'required' => false    

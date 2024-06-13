@@ -22,3 +22,56 @@
 .todo {
     background-color: pink;
 }
+
+/* css impression pdf */
+.centrer1 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.text1 {
+    margin-top: 50px;
+}
+.table1 {
+    column-width: 250px;
+    height: 45px;
+}
+.table3 {
+    margin-left: 5%;
+}
+.text3 {
+    margin-top: 22px;
+    margin-left: 5%;
+}
+.text4 {
+    text-decoration: underline;
+    font-style: italic;
+}
+.text5 {
+   font-style: italic;
+   font-weight: bold;
+}
+.border1 {
+    border: 1px solid black;
+    width: 900px;
+}
+.border2 {
+    border: 1px solid black;
+    width: 1800px; 
+}
+.color1{
+    background-color: rgb(190, 189, 189);
+}
+@media print{   
+    .ecran 
+        {display: none;}
+    }
+@media print{   
+        .ecran2 
+            {columns: 4;}
+        }
+@media print{   
+            .ecran3
+                {columns: 1;}
+            }
