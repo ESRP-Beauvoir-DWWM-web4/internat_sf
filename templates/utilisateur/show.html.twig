@@ -3,40 +3,47 @@
 {% block title %}Utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Utilisateur</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">Utilisateur</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ utilisateur.id }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ utilisateur.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ utilisateur.roles ? utilisateur.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ utilisateur.password }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ utilisateur.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prenom</th>
-                <td>{{ utilisateur.prenom }}</td>
-            </tr>
-        </tbody>
-    </table>
+                <table class="table table-striped table-bordered table-hover">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ utilisateur.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ utilisateur.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Roles</th>
+                            <td>{{ utilisateur.roles ? utilisateur.roles|json_encode : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Password</th>
+                            <td>{{ utilisateur.password }}</td>
+                        </tr>
+                        <tr>
+                            <th>Nom</th>
+                            <td>{{ utilisateur.nom }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prenom</th>
+                            <td>{{ utilisateur.prenom }}</td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
 
-    <a href="{{ path('app_utilisateur_index') }}">back to list</a>
-
-    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}">edit</a>
-
-    {{ include('utilisateur/_delete_form.html.twig') }}
+                <div class="d-flex justify-content-between">
+                    <a href="{{ path('app_utilisateur_index') }}" class="btn btn-warning">Retour à la liste</a>
+                    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}" class="btn btn-primary">Modifier</a>
+                    {{ include('utilisateur/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
