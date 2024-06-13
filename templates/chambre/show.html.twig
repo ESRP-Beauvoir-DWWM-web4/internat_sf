@@ -12,7 +12,7 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <table class="table table-bordered mt-4">
+                    <table class="table table-bordered mt-4  table-hover">
                         <tbody>
                             <h2 class="text-center">Descriptif chambre</h2>
                             <tr>
@@ -40,7 +40,7 @@
                     </table>
                 </div>
                 <div class="col-md-6">
-                    <table class="table table-bordered mt-4">
+                    <table class="table table-bordered mt-4  table-hover">
                         <tbody>
                         <h2>Occupant :</h2>
                             <tr>
@@ -73,7 +73,7 @@
             </div>
             <div class="mt-3">
                 {{ include('chambre/_change_status.html.twig') }}
-                <a href="#" class="btn btn-primary">Voir état des lieux</a>
+                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> Voir état des lieux</a>
                 
                 {% set test = false %}
                 {% set id = null %}
@@ -85,7 +85,7 @@
                 {% endfor %}
                 {% if (chambre.nom != null) and (chambre.prenom != null) and (chambre.section != null) and (chambre.dateEntree != null) %}
                     {% if test == false or chambre.etatslieux|length == 0 %}
-                    <a href="{{ path('app_etatlieux_new', {'id': chambre.id}) }}" class="btn btn-warning">créer état lieux</a>
+                    <a href="{{ path('app_etatlieux_new', {'id': chambre.id}) }}" class="btn btn-warning"><i class="fas fa-plus"></i> créer état lieux</a>
                     {% else %}
                     <a href="{{ path('app_etatlieux_edit', {'id': id}) }}" class="btn btn-primary">Faire état sortie</a>
                     {% endif %}
@@ -93,7 +93,7 @@
                 
             </div>
             <h2 class="mt-4">Historique :</h2>
-            <table class="table table-bordered mt-2">
+            <table class="table table-bordered mt-2  table-hover">
                 <tbody>
                     <tr>
                         <td>Entrée : 01/05/2022</td>

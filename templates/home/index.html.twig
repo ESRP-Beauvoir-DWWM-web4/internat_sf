@@ -1,17 +1,15 @@
-    {% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
-    {% block title %}Page d'accueil{% endblock %}
+{% block title %}Page d'accueil{% endblock %}
 
-    {% block body %}
-        <div  class="d-flex justify-content-center align-items-center">
-                        
-            <img src="{{ asset('images/logo_chambre.jpg') }}" alt="Logo chambre">
-                        
-                       
-        <h1>Bienvenue</h1>
-                        
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 text-center">
+            <img src="{{ asset('images/logo_chambre.jpg') }}" alt="Logo chambre" class="img-fluid mb-4" style="max-height: 200px;">
+            <h1 class="display-4 mb-4">Bienvenue</h1>
+            <p class="lead">Voici le site de gestion des chambres de l'ESRP Beauvoir</p>
         </div>
-        <div class="d-flex justify-content-center display-4">
-            <p >Voici le site de gestion des chambres de l'ESRP Beauvoir</p>
-        </div>
-    {% endblock %}
+    </div>
+</div>
+{% endblock %}

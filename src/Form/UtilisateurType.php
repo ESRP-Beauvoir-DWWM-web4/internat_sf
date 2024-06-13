@@ -15,6 +15,9 @@ class UtilisateurType extends AbstractType
     {
         $builder
             ->add('email')
+            ->add('password')
+            ->add('nom')
+            ->add('prenom')
             ->add('roles', ChoiceType::class, [
                 'label' => 'choisissez un ou plusieurs rôles',
                 'choices' => [
@@ -25,9 +28,6 @@ class UtilisateurType extends AbstractType
                 'multiple' => true,
                 'expanded' => true,
             ])
-            ->add('password')
-            ->add('nom')
-            ->add('prenom')
         ;
     }
 
