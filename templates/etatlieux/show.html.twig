@@ -12,7 +12,7 @@
     
 
         <div class="col-6">
-            <p class="w-25 m-4">Date de création  :  {{ etatlieux.dateCreation ? etatlieux.dateCreation|date('d-m-Y') : '' }}</p>        
+            {# <p class="w-25 m-4">Date de création  :  {{ etatlieux.dateCreation ? etatlieux.dateCreation|date('d-m-Y') : '' }}</p>         #}
             <p class="fs-4 p-2">Occupant : </p>
             <table class="table w-100">
                 
@@ -45,17 +45,18 @@
             
             <thead>
                 <tr>
-                    <th colspan="3" class="w-50 border border-dark"><p class="text-center fs-4">ENTREE</p></th>
-                    <th  colspan="3" class="w-50 border border-dark"><p class="text-center fs-4">SORTIE</p></th>
+                    <th colspan="3" class="w-50"><p class="text-center fs-4"> A L'ENTREE</p></th>
+                    <th  colspan="3" class="w-50"><p class="text-center fs-4">A LA SORTIE</p></th>
                 </tr>
-                <tr>
-                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Entrée</p></th>
-                    <th  colspan="3" class="w-100 fs-4"><p class="m-3">Entrée</p></th>
-                </tr>
+                
             </thead>
          
             <tbody>
-            
+            <tr class="border border-dark color1">
+                    <td  colspan="12">
+                        <p class="text-center">ENTREE</p>
+                    </td>
+            </tr>
             <tr class="w-100 container">
                 <td class="border border-dark col-md-1"><p>Porte</p></td>
                 <td class="border border-dark text-center">{{ etatlieux.entreePorteEntreeEtat }}</td>
@@ -88,15 +89,11 @@
                 <td class=" border border-dark text-center">{{ etatlieux.entreePlafondSortieEtat }}</td>
                 <td class=" border border-dark col-md-1">{{ etatlieux.entreePlafondSortieCommentaire }}</td>
             </tr>
-            </tbody>
-            <thead>
-         
-                <tr>
-                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Chambre</p></th>
-                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Chambre</p></th>
-               </tr>
-                
-            </thead>
+            <tr class="border border-dark color1">
+                <td  colspan="12">
+                    <p class="text-center">CHAMBRE</p>
+                </td>
+            </tr>
             <tr>
                 <td class="border border-dark col-md-1"><p>Sol</p></td>
                 <td class="border border-dark text-center">{{ etatlieux.chambreSolEntreeEtat }}</td>
@@ -217,15 +214,11 @@
                 <td class="border border-dark text-center">{{ etatlieux.chambreLuminaireSortieEtat }}</td>
                 <td class="border border-dark col-md-1">{{ etatlieux.chambreLuminaireSortieCommentaire }}</td>
             </tr>
-            </tbody>
-            <thead>
-                
-                <tr>
-                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Salle de bain</p></th>
-                    <th colspan="3" class="w-100 fs-4"><p class="m-3">Salle de bain</p></th>
-                </tr>
-                
-            </thead>
+            <tr class="border border-dark color1">
+                <td  colspan="12">
+                    <p class="text-center">SALLE DE BAIN</p>
+                </td>
+            </tr>
             <tr>
                 <td class="border border-dark"><p>Sol</p></td>
                 <td class="border border-dark text-center">{{ etatlieux.sdbSolEntreeEtat }}</td>
@@ -320,25 +313,25 @@
         <tbody>
 
             <tr>
-                <th class="p-3" colspan="1">Date de sortie : </th>
+                <td class="p-3" colspan="1">Date de sortie : </td>
                 <td class="p-3" colspan="2">{{ etatlieux.dateSortie ? etatlieux.dateSortie|date('d-m-Y') : '' }}</td>
             </tr>
             <tr>
-                <th class="p-3" colspan="1">Heures de Menage : </th>
-                <td  class="p-3" colspan="2"><div><div class="w-25">{{ etatlieux.heuresMenage }}</div> </td></div>
+                <td class="p-3" colspan="1">Heures de Menage : </td>
+                <td  class="p-3" colspan="2"><div class="w-25">{{ etatlieux.heuresMenage }}</div> </td>
                 <td><div class="p-0 w-25"><p class="m-1 fw-bold"> heure.</p></div></td>
             </tr>
             <tr>
-                <th class="p-3" colspan="1">Montant du Menage global : </th>
-                <td  class="p-3" colspan="2"><div><div class="w-25">{{ etatlieux.montantMenageGlobal }}</div> </td></div>
+                <td class="p-3" colspan="1">Montant du Menage global : </td>
+                <td  class="p-3" colspan="2"><div class="w-25">{{ etatlieux.montantMenageGlobal }}</div> </td>
                 <td><div class="p-0 w-25"><p class="m-1 fw-bold"> euros.</p></div></td>
         </tr>
             <tr>
-                <th class="p-3" colspan="1">Adresse de sortie : </th>
+                <td class="p-3" colspan="1">Adresse de sortie : </td>
                 <td class="p-3" colspan="2">{{ etatlieux.adresseSortie }}</td>
             </tr>
             <tr>
-                <th class="p-3" colspan="1">Observation : </th>
+                <td class="p-3" colspan="1">Observation : </td>
                 <td class="p-3" colspan="2">{{ etatlieux.observation }}</td>
             </tr>
         </tbody>
@@ -348,10 +341,11 @@
 
 <a href="{{ path('app_etatlieux_index') }}" class="m-3">Retour à la liste </a>
 
-<a href="{{ path('app_etatlieux_edit', {'id': etatlieux.id}) }}" class="btn bg-warning col-1">Modifier</a>
+<a href="{{ path('app_etatlieux_edit', {'id': etatlieux.id}) }}" class="btn bg-warning col-1 m-2">Modifier pour la sortie</a>
 
 
-<a href="{{ path('app_etatlieux_showimprimer', {'id': etatlieux.id}) }}" class="btn bg-gray col-2 m-1">Afficher l'impression</a>
+<a href="{{ path('app_etatlieux_showimprimerentree', {'id': etatlieux.id}) }}" target="_blank" class="btn bg-success col-2 m-2 fw-bold">Afficher l'impression de l'état des lieux entrée</a>
+<a href="{{ path('app_etatlieux_showimprimer', {'id': etatlieux.id}) }}" target="_blank" class="btn bg-success col-2 m-2 fw-bold">Afficher l'impression de l'état des lieux sortant</a>
 
 
 

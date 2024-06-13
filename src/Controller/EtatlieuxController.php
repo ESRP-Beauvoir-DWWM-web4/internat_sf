@@ -235,6 +235,14 @@ class EtatlieuxController extends AbstractController
             'etatlieux' => $etatlieux,
         ]);
     }
+    #[IsGranted('ROLE_GESTIONNAIRE')]
+    #[Route('/imprimerentree/{id}', name: 'app_etatlieux_showimprimerentree', methods: ['GET'])]
+    public function showimprimerentree(Etatlieux $etatlieux): Response
+    {
+        return $this->render('etatlieux/showimprimerentree.html.twig', [
+            'etatlieux' => $etatlieux,
+        ]);
+    }
 
     #[IsGranted('ROLE_GESTIONNAIRE')]
     #[Route('/sortie/edit/{id}', name: 'app_etatlieux_edit', methods: ['GET', 'POST'])]
@@ -250,14 +258,15 @@ class EtatlieuxController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $etatlieux->setStatut(true);
             //todo : remettre à 0 les infos sur l'occupant de la chambre
-            
+           
             $etatlieux->getChambre()->setNom(null);
             $etatlieux->getChambre()->setPrenom(null);
             $etatlieux->getChambre()->setSection(null);
             $etatlieux->getChambre()->setDateEntree(null);
             $etatlieux->getChambre()->setHandicap(null);
             $etatlieux->getChambre()->setStatut(false);
-            
+            //todo preremplir date du jour etat sortie
+            $etatlieux->setDateCreation(new \DateTimeImmutable('now'));
 
             $entityManager->flush();
             
