@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+    
+
+
+    {% block title %}Liste chambres{% endblock %}
+
+    {% block body %}
+
+
+    <div class="mb-3 mt-4 p-2">
+        <h1 class="row h-100 justify-content-center fw-bold">Liste des chambres</h1>  
+        <button id="exportButton" class="btn btn-success">Export</button> 
+        <table class="table table-bordered table-striped mt-3  table-hover"  data-toggle='tooltip' data-placement='top' title="Couleur rouge = soutirage d'eau à faire, vert=fait">
+            <thead>
+                <tr>
+                    <th colspan="12" class="text-center">Liste recapitulative des chambres</th>
+                </tr>
+                <tr>
+                    <th class="bg-primary text-white">Numero</th>
+                    <th class="bg-primary text-white">Date d'entree</th>
+                    <th class="bg-primary text-white">Section</th>
+                    <th class="bg-primary text-white">Nom</th>
+                    <th class="bg-primary text-white">Prenom</th>
+                    <th class="bg-primary text-white">Handicap</th>
+                    <th class="bg-primary text-white">Capacite lit</th>
+                    <th class="bg-primary text-white">Batiment</th>
+                    <th class="bg-primary text-white">Etage</th>
+                    <th class="bg-primary text-white">Statut</th>
+                    <th class="bg-primary text-white">Soutirage d'eau</th>
+                    <th class="bg-primary text-white">Amenagement</th>
+                </tr>
+            </thead>
+        <tbody>
+        {% for chambre in chambres %}
+            <tr 
+            {% if date(chambre.soutirageEau) < date('today')|date_modify('-15 days') or (chambre.soutirageEau == null and chambre.statut==false) %}
+                class='table-danger'
+            {% else %}
+                class='table-success'
+            {% endif %}
+            >
+                <td>{{ chambre.numero }}</td>
+                <td>{{ chambre.dateEntree ? chambre.dateEntree|date('d-m-Y') : '' }}</td>
+                <td>{{ chambre.section ? chambre.section : "_______" }}</td>
+                <td>{{ chambre.nom ? chambre.nom : "_______" }}</td>
+                <td>{{ chambre.prenom ? chambre.prenom : "_______" }}</td>
+                <td>{{ chambre.handicap ? chambre.handicap : "_______" }}</td>
+                <td>{{ chambre.capaciteLit ? chambre.capaciteLit : "_______" }}</td>
+                <td>{{ chambre.batiment ? chambre.batiment : "_______" }}</td>
+                <td>{{ chambre.etage ? chambre.etage : "_______" }}</td>
+                <td>{{ chambre.statut ? "Occupe" : "Vide" }}</td>
+                <td>{{ chambre.soutirageEau ? chambre.soutirageEau|date('d-m-Y') : '' }}
+                <td>{{ chambre.amenagement ? "PMR" : "" }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    {% endblock %}

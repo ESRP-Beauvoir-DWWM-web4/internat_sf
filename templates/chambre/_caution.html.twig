@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_etatlieux_caution', {'id': edlh.id}) }}" onsubmit="return confirm('Voulez-vous changer le statut de la caution ?');" onsubmit="confirm('Vous allez changer le status de la caution')">
+    <button class="btn btn-custom btn-primary me-1"  data-toggle='tooltip' data-placement='top' title='Retour chéque de caution'> {{ edlh.caution ? "Retenir" : "Restituer"}}
+    </button>
+</form>
