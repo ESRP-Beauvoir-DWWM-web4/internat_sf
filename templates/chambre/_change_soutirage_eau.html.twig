@@ -1,5 +1,4 @@
     <form method="post" action="{{ path('app_chambre_change_soutirage_eau', {'id': chambre.id}) }}"  onsubmit="return confirm('Vous allez actualiser la date du soutirage d\'eau')">
         <button class="btn btn-custom btn-primary me-1"  data-toggle='tooltip' data-placement='top' title='Changer la date du soutirage d eau {{ chambre.soutirageEau|date('d/m/Y') }}'> <i class="fa-solid fa-droplet"></i> {{ chambre.soutirageEau|date('d/m/Y') }}
         </button>
-        
     </form>
