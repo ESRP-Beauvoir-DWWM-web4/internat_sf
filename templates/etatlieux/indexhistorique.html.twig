@@ -1,0 +1,48 @@
+{# {% extends 'base.html.twig' %} #}
+
+{% block title %}Liste état des lieux{% endblock %}
+
+{% block body %}
+<div class="my-5">
+    <h1 class="text-center m-3">Liste des état des lieux</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Chambre numéro : </th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Section</th>
+                <th>Date d'entree</th>
+                <th>Date de sortie</th>
+                
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        {% for etatlieux in etatlieuxes %}
+            <tr>
+                
+                <td>{{ etatlieux.chambre.id }}</td>
+                <td>{{ etatlieux.nom }}</td>
+                <td>{{ etatlieux.prenom }}</td>
+                <td>{{ etatlieux.section }}</td>
+
+                <td>{{ etatlieux.dateEntree ? etatlieux.dateEntree|date('Y-m-d') : '' }}</td>
+                <td>{{ etatlieux.dateSortie ? etatlieux.dateSortie|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a class="btn bg-primary" href="{{ path('app_etatlieux_show', {'id': etatlieux.id}) }}">Voir</a>
+                    <a class="btn bg-warning" href="{{ path('app_etatlieux_edit', {'id': etatlieux.id}) }}">Modifier état de sortie</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="133">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

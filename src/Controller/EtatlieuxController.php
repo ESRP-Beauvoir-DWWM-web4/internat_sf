@@ -28,6 +28,15 @@ class EtatlieuxController extends AbstractController
             'etatlieuxes' => $etatlieuxRepository->findBy(array(), array('nom' => 'asc')),
         ]);
     }
+
+    // #[IsGranted('ROLE_GESTIONNAIRE')]
+    // #[Route('/historiquechambre', name: 'app_etatlieux_indexhistorique', methods: ['GET'])]
+    // public function indexhistorique(EtatlieuxRepository $etatlieuxRepository, Chambre $chambre): Response
+    // {
+    //     return $this->render('chambre/show.html.twig', [
+    //         'etatlieuxes' => $etatlieuxRepository->findBy(array(), array('nom' => 'asc')),
+    //     ]);
+    // }
     
     #[IsGranted('ROLE_GESTIONNAIRE')]
     #[Route('/new/{id}', name: 'app_etatlieux_new', methods: ['GET', 'POST'])]
@@ -297,4 +306,20 @@ class EtatlieuxController extends AbstractController
 
         return $this->redirectToRoute('app_etatlieux_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
+    #[IsGranted('ROLE_GESTIONNAIRE')]
+    #[Route('/caution/{id}', name: 'app_etatlieux_caution', methods: ['POST'])]
+    public function caution(Request $request, Etatlieux $etatlieux, EntityManagerInterface $entityManager): Response
+    {
+            $caution = $etatlieux->isCaution();
+            // if ($caution==0) { $etatlieux-> setCaution(null);}
+            $etatlieux->setCaution(!$caution);
+            $entityManager->flush();
+
+        // on redirige sur la page en cours
+        return $this->redirect($request->headers->get('referer'));
+    }
+
+
 }

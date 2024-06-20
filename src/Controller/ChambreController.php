@@ -27,6 +27,15 @@ class ChambreController extends AbstractController
     }
 
     #[IsGranted('ROLE_UTILISATEUR')]
+    #[Route('/export', name: 'app_chambre_indexexport', methods: ['GET'])]
+    public function indexexport(ChambreRepository $chambreRepository): Response
+    {
+        return $this->render('chambre/indexexcel.html.twig', [
+            'chambres' => $chambreRepository->findBy([], ['numero' => 'ASC']),
+        ]);
+    }
+
+    #[IsGranted('ROLE_UTILISATEUR')]
     #[Route('/planchambre', name: 'app_chambre_planchambre', methods: ['GET'])]
     public function indexplanchambre(ChambreRepository $chambreRepository): Response
     {
@@ -124,6 +133,7 @@ class ChambreController extends AbstractController
         // on redirige sur la page en cours
         return $this->redirect($request->headers->get('referer'));
     }
+
     #[IsGranted('ROLE_GESTIONNAIRE')]
     #[Route('/changeSoutirage/{id}', name: 'app_chambre_change_soutirage_eau', methods: ['POST'])]
     public function changeSoutirage(Request $request, Chambre $chambre, EntityManagerInterface $entityManager): Response
@@ -139,4 +149,6 @@ class ChambreController extends AbstractController
         // on redirige sur la page en cours
         return $this->redirect($request->headers->get('referer'));
     }
+
+
 }

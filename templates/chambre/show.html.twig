@@ -73,7 +73,7 @@
             </div>
             <div class="mt-3">
                 {{ include('chambre/_change_status.html.twig') }}
-                <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i> Voir état des lieux</a>
+         
                 
                 {% set test = false %}
                 {% set id = null %}
@@ -93,35 +93,43 @@
                 
             </div>
             <h2 class="mt-4">Historique :</h2>
-            <table class="table table-bordered mt-2  table-hover">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center">Nom</th>
+                        <th class="w-25 text-center">Date d'entrée</th>
+                        <th class="w-25 text-center">Date de sortie</th>
+                        <th class="text-center">Statut</th>
+                        <th></th>
+                        <th class="w-25 text-center">Voir état des lieux</th>
+                    </tr>
+                </thead>
                 <tbody>
+            {% for edlh in chambre.etatslieux|slice(0,5) %}
+            
+            {% if edlh  %}
+           
                     <tr>
-                        <td>Entrée : 01/05/2022</td>
-                        <td>Sortie : 25/02/2024</td>
-                        <td>DUPONT Michel</td>
-                        <td><a href="#" class="btn btn-primary">Voir</a></td>
+                       <td class="p-3">{{ edlh.nom }}</td>
+                       <td class="p-3">{{ edlh.dateEntree ? edlh.dateEntree|date('d-m-Y') : '' }}</td>
+                       <td class="p-3">{{ edlh.dateSortie ? edlh.dateSortie|date('d-m-Y') : '' }}</td>
+                       <td>{{ edlh.caution ? "Restituée" : "Retenue" }}</td>
+                            
+                       <td class="p-3"> {% if edlh.caution == 0 %}
+                                {{include("chambre/_caution.html.twig")}} 
+                            {% endif %}
+                        </td>
+                        <td class="p-3"><a class="btn bg-success d-flex justify-content-center text-white" href="{{ path('app_etatlieux_show', {'id': edlh.id}) }}">Voir</a></td>
                     </tr>
-                    <tr>
-                        <td>Entrée : 01/02/2022</td>
-                        <td>Sortie : 16/04/2022</td>
-                        <td>LAMBERT Gérard</td>
-                        <td><a href="#" class="btn btn-primary">Voir</a></td>
-                    </tr>
-                    <tr>
-                        <td>Entrée : 17/07/2021</td>
-                        <td>Sortie : 20/01/2022</td>
-                        <td>DURAND Jacky</td>
-                        <td><a href="#" class="btn btn-primary">Voir</a></td>
-                    </tr>
-                    <tr>
-                        <td>Entrée : 01/03/2020</td>
-                        <td>Sortie : 29/06/2021</td>
-                        <td>LEGRAND Kévin</td>
-                        <td><a href="#" class="btn btn-primary">Voir</a></td>
-                    </tr>
+                
+                
+                
+                    
+                    {% endif %}
+                    {% endfor %}
                 </tbody>
-            </table>
-
+          </table>
+          
             <a href="{{ path('app_chambre_index') }}">Retour à la liste</a>
 
                     <a href="{{ path('app_chambre_edit', {'id': chambre.id}) }}" class="btn btn-warning btn-sm">Modifier la chambre</a>            
