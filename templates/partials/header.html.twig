@@ -1,15 +1,15 @@
-<header  class="row bg-primary text-white p-3 p-1">
-    <div class="d-flex justify-content-between container">
+<header  class=" bg-primary text-white p-1 m-0 col-12">
+    <div class="d-flex justify-content-between">
         <div class="w-25">    
-            <img class="col-md-2 w-100 rounded mb-1" src="{{ asset('images/ugecam.jpg') }}" alt="Logo UGECAM"> 
+            <img class="col-2 w-100 rounded mb-1" src="{{ asset('images/ugecam.jpg') }}" alt="Logo UGECAM"> 
             <h1 id="maintitle">ESRP BEAUVOIR</h1>
         </div>
 
             
-        <div class="col-md-10 d-flex justify-content-end align-items-center w-50 d-flex flex-wrap row">
+        <div class="col-10 d-flex justify-content-end align-items-center w-50 d-flex flex-wrap row">
             <div>
                 {% if app.user %}
-                <span class="ml-2 fs-2">Bonjour! {{app.user.nom}}, vous êtes connecté !</span>
+                <span class="ml-2 fs-2">Bonjour  {{ app.user.prenom }}  {{app.user.nom}}, vous êtes connecté !</span>
 
                 {% else %}
                 <p class="ml-2 fs-2">Veuillez vous connecter</p>
@@ -18,39 +18,48 @@
 
             <div>
                 <nav class="navbar navbar-light w-75">
-                    
-                        <div class="dropdown bg-white p-1 rounded m-1">
-                            <a class="btn btn-primary"  href="{{ path('app_home') }}">
-                                Accueil
-                            </a>
-                        </div>
+                    <div class="dropdown bg-white p-1 rounded m-1">
+                        <a class="btn btn-primary"  href="{{ path('app_home') }}">
+                            Accueil
+                        </a>
+                    </div>
                         
-                        <div class="dropdown bg-white p-1 rounded m-1">
-                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Utilisateurs
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item"  href="{{ path('app_utilisateur_new') }}">Créer un utilisateur</a></li>
-                                <li><a class="dropdown-item"   href="{{ path('app_utilisateur_index') }}">Liste des utilisateurs</a></li>
-                            </ul>
-                        </div>
+                    {% if is_granted('ROLE_ADMIN')%}
+                    <div class="dropdown bg-white p-1 rounded m-1">
+                         <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Utilisateurs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"  href="{{ path('app_utilisateur_new') }}">Créer un utilisateur</a></li>
+                            <li><a class="dropdown-item"   href="{{ path('app_utilisateur_index') }}">Liste des utilisateurs</a></li>
+                        </ul>
+                    </div>
+                    {% elseif is_granted('ROLE_ADMIN') == false  %} 
 
-                        <div class="dropdown bg-white p-1 rounded m-1">
-                            <a class="btn btn-primary dropdown-toggle"   href="{{ path('app_chambre_index') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Chambres
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item"  href="{{ path('app_chambre_planchambre') }}">Plan des chambres</a></li>
-                                <li><a class="dropdown-item"  href="{{ path('app_chambre_index') }}">Liste des chambres</a></li>
-                            </ul>
-                        </div>
-                    
-
-                    {% if app.user %}
-                        <a href="{{ path('app_logout') }}" class="btn btn-light m-5">Déconnexion</a>
-                    {% else %}
-                        <a href="{{ path('app_login') }}" class="btn btn-light m-5">Connexion</a>
                     {% endif %}
+
+                    {% if is_granted('ROLE_UTILISATEUR') %}
+                    <div class="dropdown bg-white p-1 rounded m-1">
+                        <a class="btn btn-primary dropdown-toggle"   href="{{ path('app_chambre_index') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Chambres
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"  href="{{ path('app_chambre_planchambre') }}">Plan des chambres</a></li>
+                            <li><a class="dropdown-item"  href="{{ path('app_chambre_index') }}">Liste des chambres</a></li>
+                        </ul>
+                    </div>
+
+                    {% endif %}
+
+
+
+
+
+                {% if app.user %}
+                    <a href="{{ path('app_logout') }}" class="btn btn-light m-5">Déconnexion</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}" class="btn btn-light m-5">Connexion</a>
+                {% endif %}
                 </nav>
             </div>
         </div>

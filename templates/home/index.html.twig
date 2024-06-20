@@ -6,9 +6,30 @@
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8 text-center">
-            <img src="{{ asset('images/logo_chambre.jpg') }}" alt="Logo chambre" class="img-fluid mb-4" style="max-height: 200px;">
-            <h1 class="display-4 mb-4">Bienvenue</h1>
-            <p class="lead">Voici le site de gestion des chambres de l'ESRP Beauvoir</p>
+            <img src="{{ asset('images/logo_chambre.jpg') }}" alt="Logo chambre" class="img-fluid mb-1">
+            <h1 class="display-4 mb-4 text-primary fw-bold">Bienvenue</h1>
+            <p class="lead text-muted">Voici le site de gestion de l'internat de l'ESRP Beauvoir</p>
+                
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="card mt-4 mb-3">
+                            <p>Vous êtes connecté en tant qu'<span class="badge bg-info">ADMINISTRATEUR</span></p> 
+                            <p>Vous pouvez accèder à la liste des utilisateurs, en créer des nouveaux ou les modifier.</p>
+                            <p>Vous pouvez accèder aux états des lieux et aux informations concernants les chambres et les modifier.</p>
+                        </div>
+                {% endif %}
+                {% if is_granted('ROLE_GESTIONNAIRE') and not is_granted('ROLE_ADMIN') %}
+                    <div class="card mt-4 mb-3">
+                            <p>Vous êtes connecté en tant que <span class="badge bg-info">GESTIONNAIRE</span></p>
+                            <p>Vous pouvez accèder aux états des lieux et aux informations concernants les chambres et les modifier.</p>
+                        </div>
+                {% endif %}
+                {% if is_granted('ROLE_UTILISATEUR')  and not (is_granted('ROLE_GESTIONNAIRE') or is_granted('ROLE_ADMIN')) %}
+                    <div class="card mt-4 mb-3">
+                            <p>Vous êtes connecté en tant qu'<span class="badge bg-info">UTILISATEUR</span></p>
+                            <p>Vous pouvez accèder aux informations des chambres sans pouvoir faire de modification.</p>
+                     </div>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,46 @@
+    {% extends 'base.html.twig' %}
+
+    {% block title %}Plan chambres{% endblock %}
+
+    {% block body %}
+    <h1 class="row h-100 justify-content-center fw-bold">Plan des chambres</h1>
+    <body>
+    <div class="container">
+        <div class="row ">
+            <!-- Row 1 -->
+            <div class="col-1 room">001</div>
+            <div class="col-1 room todo">NOM Prénom Formation Handicap <br> état des lieux entrée à faire</div>
+            <div class="col-1 room">002</div>
+            <div class="col-1 room">003</div>
+            <div class="col-1 room">NOM Prénom Formation Handicap</div>
+            <div class="col-1 room absent">NOM Prénom Formation Handicap <br> stagiaire absent</div>
+            <div class="col-1 room">005</div>
+            <div class="col-1 room">006</div>
+            <div class="col-1 room">007</div>
+            <div class="col-1 room">NOM Prénom Formation Handicap</div>
+            <div class="col-1 pmr">PMR</div>
+            <div class="col-1 pmr">PMR</div>
+            <div class="col-1 pmr">PMR</div>
+        </div>
+        <div class="row ">
+            <!-- Row 2 -->
+            <div class="col-1 room">016</div>
+            <div class="col-1 room">NOM Prénom Formation Handicap</div>
+            <div class="col-1 room">015</div>
+            <div class="col-1 room">NOM Prénom Formation Handicap</div>
+            <div class="col-1 room">014</div>
+            <div class="col-1 room todo">NOM Prénom Formation Handicap <br> état des lieux entrée à faire</div>
+            <div class="col-1 room">013</div>
+            <div class="col-1 room">012</div>
+            <div class="col-1 room">011</div>
+            <div class="col-1 room">010</div>
+            <div class="col-1 room">009</div>
+            <div class="col-1 room">NOM Prénom Formation Handicap</div>
+            <div class="col-1 room absent">NOM Prénom Formation Handicap <br> stagiaire absent</div>
+            <div class="col-1 room">008</div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+    
